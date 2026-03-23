@@ -7,12 +7,8 @@ Automated PR review cycle for Claude Code. Requests a code review, intelligently
 ## Installation
 
 ```bash
-claude plugin add /path/to/claude-code-review-cycle-skill
-```
-
-Or for a single session:
-```bash
-claude --plugin-dir /path/to/claude-code-review-cycle-skill
+git clone https://github.com/axisrow/claude-code-review-cycle-skill.git
+cp -r claude-code-review-cycle-skill/skills/review-cycle ~/.claude/skills/
 ```
 
 ### Prerequisites

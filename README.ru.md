@@ -7,12 +7,8 @@
 ## Установка
 
 ```bash
-claude plugin add /path/to/claude-code-review-cycle-skill
-```
-
-Или для одной сессии:
-```bash
-claude --plugin-dir /path/to/claude-code-review-cycle-skill
+git clone https://github.com/axisrow/claude-code-review-cycle-skill.git
+cp -r claude-code-review-cycle-skill/skills/review-cycle ~/.claude/skills/
 ```
 
 ### Требования
