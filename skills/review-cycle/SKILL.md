@@ -1,6 +1,6 @@
 ---
-name: review-cycle
-description: Automated PR review cycle — request review, fix issues, repeat until approved, then merge
+name: rc
+description: (review-cycle) Automated PR review cycle — request review, fix issues, repeat until approved, then merge
 disable-model-invocation: true
 allowed-tools: Bash, Read, Edit, Write, Grep, Glob, Agent
 argument-hint: "[pr-number]"
