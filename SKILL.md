@@ -94,8 +94,22 @@ Only fix comments with the `FIX` verdict. For other verdicts — leave a reply c
 - Push to remote
 - Return to step 2
 
-### 7. Finalization
-When the PR is approved and no comments remain:
+### 7. Check CI before merge
+Before merging, verify that all CI checks pass:
+```bash
+gh pr checks <PR> --watch --interval 10
+```
+If any check has failed — read the logs of the failed run:
+```bash
+gh run list --branch <HEAD_BRANCH> --limit 5 --json databaseId,name,status,conclusion --jq '.[] | select(.conclusion == "failure")'
+gh run view <RUN_ID> --log-failed
+```
+Identify the root cause, apply fixes to the code, commit and push (follow the commit style from step 6), then wait for CI to re-run and repeat this check. Only proceed to step 8 once all checks pass (or the PR has no CI configured).
+
+If the same CI check fails more than 2 times after fixes — notify the user and stop: do not merge a broken build.
+
+### 8. Finalization
+When the PR is approved, no comments remain, and CI is green:
 ```bash
 gh pr merge <PR> --squash --delete-branch
 git checkout main
