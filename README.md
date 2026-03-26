@@ -16,6 +16,26 @@ cp -r claude-code-review-cycle-skill/skills/review-cycle ~/.claude/skills/
 - [GitHub CLI](https://cli.github.com/) (`gh`) authenticated with your account
 - Claude Code with GitHub Actions reviewer (`claude[bot]`) or any other PR reviewer
 
+### Setup
+
+Before using the skill, run the setup command once:
+
+```
+/install-github-app
+```
+
+This sets up the GitHub App and CI so Claude Code can review code and edit comments on pull requests.
+
+### Setup
+
+Before using the skill, install the GitHub App with proper permissions:
+
+```
+/install-github-app
+```
+
+This grants the skill access to read pull requests, comments, and perform merge operations via the GitHub API.
+
 ## Usage
 
 ```

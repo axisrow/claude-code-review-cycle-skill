@@ -16,6 +16,16 @@ cp -r claude-code-review-cycle-skill/skills/review-cycle ~/.claude/skills/
 - [GitHub CLI](https://cli.github.com/) (`gh`), авторизованный в вашем аккаунте
 - Claude Code с ревьюером через GitHub Actions (`claude[bot]`) или любой другой PR-ревьюер
 
+### Настройка
+
+Перед использованием скилла выполните команду один раз:
+
+```
+/install-github-app
+```
+
+Это устанавливает GitHub App и CI, чтобы Claude Code мог делать ревью и редактировать комментарии на pull requests.
+
 ## Использование
 
 ```
