@@ -39,13 +39,13 @@ gh pr comment <PR> --body "@claude review. Focus on critical issues: bugs, secur
 ### 3. Wait for reviewer response
 
 #### 3.1. Find the bot's comment
-Wait 20 seconds, then fetch issue comments and find the latest one from `claude[bot]`:
+Wait 120 seconds (reviewers rarely finish in under 2 minutes), then fetch issue comments and find the latest one from `claude[bot]`:
 ```bash
 gh api repos/{owner}/{repo}/issues/{PR}/comments --jq '[.[] | select(.user.login == "claude[bot]")] | last | {id, created_at, body}'
 ```
 Save the `COMMENT_ID` and `created_at` timestamp.
 
-If no comment found — wait 20 more seconds and retry (max 3 total attempts). If still not found — notify the user and stop.
+If no comment found — wait 30 more seconds and retry (max 3 total attempts). If still not found — notify the user and stop.
 
 #### 3.2. Poll the comment
 Every 30 seconds, check the comment body:
